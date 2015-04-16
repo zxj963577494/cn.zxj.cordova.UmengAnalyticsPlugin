@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="cn.zxj.cordova.UmengAnalyticsPlugin"
+        version="0.0.1">
+    <name>UmengAnalytics Plugin</name>
+    <description>
+        umengAnalytics for cordova plugin
+    </description>
+    <author>zhengxvjiang</author>
+    <license>Apache 2.0 License</license>
+    <keywords>umengAnalytics,umeng,analytics</keywords>
+  <!--  <repo>https://github.com/EddyVerbruggen/Toast-PhoneGap-Plugin.git</repo>
+    <issue>https://github.com/EddyVerbruggen/Toast-PhoneGap-Plugin/issues</issue>-->
+    <engines>
+        <engine name="cordova" version=">=3.0.0"/>
+    </engines>
+
+    <js-module src="www/UmengAnalyticsPlugin.js" name="UmengAnalyticsPlugin">
+        <clobbers target="window.plugins.umengAnalyticsPlugin"/>
+    </js-module>
+    <!-- ios -->
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="UmengAnalyticsPlugin">
+                <param name="ios-package" value="UmengAnalyticsPlugin"/>
+            </feature>
+        </config-file>
+        <header-file src="src/ios/MobClick.h" target-dir="src/ios" />
+        <source-file src="src/ios/libMobClickLibrary.a" framework="true" />
+        <framework src="libz.dylib" weak="true" />
+    </platform>
+
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="UmengAnalyticsPlugin">
+                <param name="android-package" value="cn.zxj.cordova.UmengAnalyticsPlugin"/>
+            </feature>
+        </config-file>
+        <source-file src="src/android/umeng-analytics-v5.4.2.jar" target-dir="libs"></source-file>
+        <source-file src="src/android/UmengAnalyticsPlugin.java"
+                     target-dir="src/cn/zxj/cordova/UmengAnalyticsPlugin/"></source-file>
+    </platform>
+</plugin>

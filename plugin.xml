@@ -10,8 +10,8 @@
     <author>zhengxvjiang</author>
     <license>Apache 2.0 License</license>
     <keywords>umengAnalytics,umeng,analytics</keywords>
-  <!--  <repo>https://github.com/EddyVerbruggen/Toast-PhoneGap-Plugin.git</repo>
-    <issue>https://github.com/EddyVerbruggen/Toast-PhoneGap-Plugin/issues</issue>-->
+    <repo>https://github.com/zxj963577494/cn.zxj.cordova.UmengAnalyticsPlugin.git</repo>
+    <issue>https://github.com/zxj963577494/cn.zxj.cordova.UmengAnalyticsPlugin/issues</issue>
     <engines>
         <engine name="cordova" version=">=3.0.0"/>
     </engines>
@@ -26,9 +26,9 @@
                 <param name="ios-package" value="UmengAnalyticsPlugin"/>
             </feature>
         </config-file>
-        <header-file src="src/ios/MobClick.h" target-dir="src/ios" />
-        <source-file src="src/ios/libMobClickLibrary.a" framework="true" />
-        <framework src="libz.dylib" weak="true" />
+        <header-file src="src/ios/MobClick.h" target-dir="src/ios"/>
+        <source-file src="src/ios/libMobClickLibrary.a" framework="true"/>
+        <framework src="libz.dylib" weak="true"/>
     </platform>
 
     <!-- android -->

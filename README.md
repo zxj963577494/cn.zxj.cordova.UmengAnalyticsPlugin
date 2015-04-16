@@ -1,7 +1,7 @@
 简介
 ===================================
-本插件使用友盟统计，简单实现了友盟统计的基本功能，如启动次数等，暂不包含页面统计等。
-本插件目前应该只支持Android，IOS系统匹配尚未完成（因为暂时用不到，大家可以对照友盟文档试一下）。
+    本插件使用友盟统计，简单实现了友盟统计的基本功能，如启动次数等，暂不包含页面统计等。
+    本插件目前应该只支持Android，IOS系统匹配尚未完成（因为暂时用不到，大家可以对照友盟文档试一下）。
 
 使用说明
 ===================================
@@ -20,8 +20,8 @@
     <meta-data android:name="UMENG_CHANNEL" android:value="YOUR_CHANNEL"/>
     <meta-data android:name="UMENG_APPKEY" android:value="YOUR_APP_KEY"/>
 ```
-YOUR_CHANNEL：填写渠道名称，如360、wodajia、QQ等，可以自定义渠道，在统计后台可以看到渠道信息
-YOUR_APP_KEY：填写从友盟获取的APPKey
+    YOUR_CHANNEL：填写渠道名称，如360、wodajia、QQ等，可以自定义渠道，在统计后台可以看到渠道信息
+    YOUR_APP_KEY：填写从友盟获取的APPKey
 
 ### 4.安装插件
 使用命令行，切换至ionic所在目录，安装插件

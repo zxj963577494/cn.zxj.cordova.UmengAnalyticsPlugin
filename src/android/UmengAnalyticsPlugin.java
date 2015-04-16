@@ -1,4 +1,4 @@
-﻿package cn.zxj.cordova;
+package cn.zxj.cordova;
 
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaInterface;

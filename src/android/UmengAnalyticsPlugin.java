@@ -54,7 +54,7 @@ public class UmengAnalyticsPlugin extends CordovaPlugin {
 	void init() {
 		MobclickAgent.openActivityDurationTrack(false);
 		MobclickAgent.setAutoLocation(true);
-		MobclickAgent.setSessionContinueMillis(1000);
+		MobclickAgent.updateOnlineConfig(mContext);
 	}
 
 	void setDebugMode(boolean mode) {

@@ -1,4 +1,10 @@
-package cn.zxj.cordova;
+﻿package cn.zxj.cordova;
+
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaInterface;
@@ -8,24 +14,24 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import com.ionicframework.fang323888.R;
-
 import com.umeng.analytics.MobclickAgent;
+import com.umeng.analytics.AnalyticsConfig
 import com.umeng.analytics.social.UMPlatformData;
 import com.umeng.analytics.social.UMPlatformData.GENDER;
 import com.umeng.analytics.social.UMPlatformData.UMedia;
 
 public class UmengAnalyticsPlugin extends CordovaPlugin {
-	private Context mContext;
+    private static Context mContext;
+
 	@Override
     public void initialize(CordovaInterface cordova, CordovaWebView webView) {
     	super.initialize(cordova, webView);
-    	mContext = this;
-   }
+mContext=this.cordova.getActivity();
+    }
 
     @Override
-	public boolean execute(String action, JSONArray data,CallbackContext callbackContext) throws JSONException {
-	Activity activity = this.cordova.getActivity();
+	public boolean execute(String action, JSONArray data,CallbackContext callbackContext) throws 
+JSONException {
         if (action.equals("init")){
            init();
     	}
@@ -40,8 +46,6 @@ public class UmengAnalyticsPlugin extends CordovaPlugin {
 	}
 
 	void init() {
-		AnalyticsConfig.setAppkey("552dbe4afd98c5b99700130e");
-        AnalyticsConfig.setChannel("fangshijie");
         MobclickAgent.setDebugMode(true);
         MobclickAgent.openActivityDurationTrack(false);
         MobclickAgent.setAutoLocation(true);
@@ -49,12 +53,10 @@ public class UmengAnalyticsPlugin extends CordovaPlugin {
 	}
 
 	void onResume() {
-		super.onResume();
 		MobclickAgent.onResume(mContext);
 	}
 
 	void onPause() {
-		super.onPause();
 		MobclickAgent.onPause(mContext);
 	}
 }

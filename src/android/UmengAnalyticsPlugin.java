@@ -1,4 +1,4 @@
-﻿package cn.zxj.cordova;
+package cn.zxj.cordova;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -15,7 +15,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import com.umeng.analytics.MobclickAgent;
-import com.umeng.analytics.AnalyticsConfig
 import com.umeng.analytics.social.UMPlatformData;
 import com.umeng.analytics.social.UMPlatformData.GENDER;
 import com.umeng.analytics.social.UMPlatformData.UMedia;

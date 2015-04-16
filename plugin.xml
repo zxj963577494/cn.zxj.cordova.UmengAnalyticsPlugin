@@ -38,8 +38,10 @@
                 <param name="android-package" value="cn.zxj.cordova.UmengAnalyticsPlugin"/>
             </feature>
         </config-file>
-        <meta-data android:name="UMENG_CHANNEL" android:value="fangshijie"/>
-        <meta-data android:name="UMENG_APPKEY" android:value="552dbe4afd98c5b99700130e"/>
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+            <meta-data android:name="UMENG_CHANNEL" android:value="fangshijie"/>
+            <meta-data android:name="UMENG_APPKEY" android:value="552dbe4afd98c5b99700130e"/>
+        </config-file>
         <source-file src="src/android/umeng-analytics-v5.4.2.jar" target-dir="libs"></source-file>
         <source-file src="src/android/UmengAnalyticsPlugin.java"
                      target-dir="src/cn/zxj/cordova/UmengAnalyticsPlugin/"></source-file>

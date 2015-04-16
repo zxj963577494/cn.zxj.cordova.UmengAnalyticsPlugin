@@ -67,5 +67,5 @@ ionic plugin add D:\plugins\cn.zxj.cordova.UmengAnalyticsPlugin
             }
         }])
 ```
-### 参考资料
+### 6.参考资料
 [友盟开发文档](http://dev.umeng.com/)

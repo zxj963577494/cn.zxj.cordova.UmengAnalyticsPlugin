@@ -20,49 +20,58 @@ import com.umeng.analytics.social.UMPlatformData.GENDER;
 import com.umeng.analytics.social.UMPlatformData.UMedia;
 
 public class UmengAnalyticsPlugin extends CordovaPlugin {
-    private static Context mContext;
+	private static Context mContext;
 
 	@Override
-    public void initialize(CordovaInterface cordova, CordovaWebView webView) {
-    	super.initialize(cordova, webView);
-mContext=this.cordova.getActivity();
-    }
+	public void initialize(CordovaInterface cordova, CordovaWebView webView) {
+		super.initialize(cordova, webView);
+		mContext = this.cordova.getActivity();
+	}
 
-    @Override
-	public boolean execute(String action, JSONArray data,CallbackContext callbackContext) throws 
-JSONException {
-        if (action.equals("init")){
-           init();
-    	}
-    	if (action.equals("setDebugMode")){
-           setDebugMode();
-        }
-		if(action.equals("onResume")){
-           onResume();
-        }
-        if(action.equals("onPause")){
-           onPause();
-        }
-	    callbackContext.success();
-        return true;
+	@Override
+	public boolean execute(String action, JSONArray data,
+			CallbackContext callbackContext) throws JSONException {
+		if (action.equals("init")) {
+			init();
+		}
+		if (action.equals("setDebugMode")) {
+			boolean mode = data.getBoolean(0);
+			setDebugMode(mode);
+		}
+		if (action.equals("onResume")) {
+			onResume();
+		}
+		if (action.equals("onPause")) {
+			onPause();
+		}
+		if (action.equals("KillProcess")) {
+			KillProcess();
+		}
+		callbackContext.success();
+		return true;
 	}
 
 	void init() {
-        MobclickAgent.openActivityDurationTrack(false);
-        MobclickAgent.setAutoLocation(true);
-        MobclickAgent.setSessionContinueMillis(1000);
+		MobclickAgent.openActivityDurationTrack(false);
+		MobclickAgent.setAutoLocation(true);
+		MobclickAgent.setSessionContinueMillis(1000);
 	}
 
-    void setDebugMode(){
-        MobclickAgent.setDebugMode(true);
-    }
-
+	void setDebugMode(boolean mode) {
+		MobclickAgent.setDebugMode(mode);
+	}
 
 	void onResume() {
+		super.onResume();
 		MobclickAgent.onResume(mContext);
 	}
 
 	void onPause() {
+		super.onPause();
 		MobclickAgent.onPause(mContext);
 	}
+
+	void KillProcess(){
+    	MobclickAgent.onKillProcess(mContext);
+    }
 }

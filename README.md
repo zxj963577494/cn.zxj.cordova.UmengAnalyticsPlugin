@@ -31,7 +31,7 @@ ionic plugin add D:\plugins\cn.zxj.cordova.UmengAnalyticsPlugin
 
 ### 5.配置代码
 在app.js文件中添加插件所需的代码
-```
+```javascript
     .run(['$ionicPlatform', function ($ionicPlatform) {
             $ionicPlatform.ready(function () {
                 if (window.cordova && window.cordova.plugins.Keyboard) {

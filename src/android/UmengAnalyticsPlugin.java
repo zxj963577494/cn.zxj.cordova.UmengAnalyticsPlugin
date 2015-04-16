@@ -34,6 +34,9 @@ JSONException {
         if (action.equals("init")){
            init();
     	}
+    	if (action.equals("setDebugMode")){
+           setDebugMode();
+        }
 		if(action.equals("onResume")){
            onResume();
         }
@@ -45,11 +48,15 @@ JSONException {
 	}
 
 	void init() {
-        MobclickAgent.setDebugMode(true);
         MobclickAgent.openActivityDurationTrack(false);
         MobclickAgent.setAutoLocation(true);
         MobclickAgent.setSessionContinueMillis(1000);
 	}
+
+    void setDebugMode(){
+        MobclickAgent.setDebugMode(true);
+    }
+
 
 	void onResume() {
 		MobclickAgent.onResume(mContext);

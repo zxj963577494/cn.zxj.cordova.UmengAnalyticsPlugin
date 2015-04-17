@@ -28,6 +28,8 @@
         </config-file>
         <header-file src="src/ios/MobClick.h" target-dir="src/ios"/>
         <source-file src="src/ios/libMobClickLibrary.a" framework="true"/>
+        <header-file src="src/ios/UmengAnalyticsPlugin.h" />
+        <source-file src="src/ios/UmengAnalyticsPlugin.m" />
         <framework src="libz.dylib" weak="true"/>
     </platform>
 
@@ -52,4 +54,17 @@
         <source-file src="src/android/UmengAnalyticsPlugin.java"
                      target-dir="src/cn/zxj/cordova/UmengAnalyticsPlugin/"></source-file>
     </platform>
+
+    <!-- wp8 -->
+    <platform name="wp8">
+        <config-file target="config.xml" parent="/*">
+            <feature name="UmengAnalyticsPlugin">
+                <param name="wp-package" value="UmengAnalyticsPlugin"/>
+            </feature>
+        </config-file>
+
+        <framework src="src/wp8/UmengAnalyticsWP8.dll" custom="true" />
+        <source-file src="src/wp/UmengAnalyticsPlugin.cs" />
+    </platform>
+
 </plugin>

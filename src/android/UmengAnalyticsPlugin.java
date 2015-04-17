@@ -44,8 +44,8 @@ public class UmengAnalyticsPlugin extends CordovaPlugin {
 		if (action.equals("onPause")) {
 			onPause();
 		}
-		if (action.equals("KillProcess")) {
-			killProcess();
+		if (action.equals("onKillProcess")) {
+			onKillProcess();
 		}
 		callbackContext.success();
 		return true;
@@ -71,7 +71,7 @@ public class UmengAnalyticsPlugin extends CordovaPlugin {
 		MobclickAgent.onPause(mContext);
 	}
 
-	void killProcess(){
+	void onKillProcess(){
     	MobclickAgent.onKillProcess(mContext);
     }
 }

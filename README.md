@@ -51,7 +51,7 @@ ionic plugin add D:\plugins\cn.zxj.cordova.UmengAnalyticsPlugin
                 window.plugins.umengAnalyticsPlugin.setDebugMode(true);
 
                 //注意，这段代码是应用退出前保存统计数据，请在退出应用前调用
-                //window.plugins.umengAnalyticsPlugin.KillProcess();
+                //window.plugins.umengAnalyticsPlugin.onKillProcess();
 
     			//必需
                 document.addEventListener("pause", onPause, false);

@@ -62,8 +62,12 @@
                 <param name="wp-package" value="UmengAnalyticsPlugin"/>
             </feature>
         </config-file>
-
-        <framework src="src/wp8/UmengAnalyticsWP8.dll" custom="true" />
+        <config-file target="Properties/WMAppManifest.xml" parent="/Deployment/App/Capabilities">
+            <Capability Name="ID_CAP_IDENTITY_DEVICE" />
+            <Capability Name="ID_CAP_IDENTITY_USER" />
+            <Capability Name="ID_CAP_NETWORKING" />
+        </config-file>
+        <framework src="src/wp/UmengAnalyticsWP8.dll" custom="true" />
         <source-file src="src/wp/UmengAnalyticsPlugin.cs" />
     </platform>
 

@@ -19,9 +19,9 @@ UmengAnalyticsPlugin.prototype.setDebugMode = function (mode) {
     this.call_native("setDebugMode", [mode], null);
 }
 
-UmengAnalyticsPlugin.prototype.KillProcess = function () {
+UmengAnalyticsPlugin.prototype.killProcess = function () {
     data = []
-    this.call_native("KillProcess", data, null);
+    this.call_native("killProcess", data, null);
 }
 
 UmengAnalyticsPlugin.prototype.onResume = function () {

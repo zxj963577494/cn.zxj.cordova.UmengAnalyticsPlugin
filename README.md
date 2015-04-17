@@ -1,7 +1,7 @@
 简介
 ===================================
     本插件使用友盟统计，简单实现了友盟统计的基本功能，如启动次数等，暂不包含页面统计等。
-    本插件目前应该只支持Android，IOS系统匹配尚未完成（因为暂时用不到，大家可以对照友盟文档试一下）。
+    本插件目前应该只支持Android，Windows Phone 8，IOS系统匹配尚未完成（因为暂时用不到，大家可以对照友盟文档试一下）。
 
 使用说明
 ===================================
@@ -14,7 +14,9 @@
 ```
     git clone https://github.com/zxj963577494/cn.zxj.cordova.UmengAnalyticsPlugin.git
 ```
-### 3.配置AppKey和Channel
+Android
+-------------------------------------
+### 1.配置AppKey和Channel
 打开插件目录下的plugin.xml文件
 ```
     <meta-data android:name="UMENG_CHANNEL" android:value="YOUR_CHANNEL"/>
@@ -23,13 +25,13 @@
     YOUR_CHANNEL：填写渠道名称，如360、wodajia、QQ等，可以自定义渠道，在统计后台可以看到渠道信息
     YOUR_APP_KEY：填写从友盟获取的APPKey
 
-### 4.安装插件
+### 2.安装插件
 使用命令行，切换至ionic所在目录，安装插件
 ```
 ionic plugin add D:\plugins\cn.zxj.cordova.UmengAnalyticsPlugin
 ```
 
-### 5.配置代码
+### 3.配置代码
 在app.js文件中添加插件所需的代码
 ```javascript
     .run(['$ionicPlatform', function ($ionicPlatform) {
@@ -67,5 +69,43 @@ ionic plugin add D:\plugins\cn.zxj.cordova.UmengAnalyticsPlugin
             }
         }])
 ```
-### 6.参考资料
-[友盟开发文档](http://dev.umeng.com/)
+### 4.参考资料
+[友盟统计分析Android文档 ](http://dev.umeng.com/analytics/android-doc/integration)
+Windwos Phone 8
+-------------------------------------
+### 1.配置AppKey和Channel
+    打开插件目录下的wp8\UmengAnalyticsPlugin.cs文件
+```c#
+UmengAnalytics.Init("YOUR_APP_KEY");
+```
+    或者
+```c#
+UmengAnalytics.Init("YOUR_APP_KEY","YOUR_CHANNEL");
+```
+    YOUR_APP_KEY：填写从友盟获取的APPKey
+    YOUR_CHANNEL：填写渠道名称，默认值为Marketplace，可以自定义渠道，在统计后台可以看到渠道信息
+### 2.安装插件
+    使用命令行，切换至ionic所在目录，安装插件
+```
+ionic plugin add D:\plugins\cn.zxj.cordova.UmengAnalyticsPlugin
+```
+### 3.配置代码
+在app.js文件中添加插件所需的代码
+```javascript
+    .run(['$ionicPlatform', function ($ionicPlatform) {
+            $ionicPlatform.ready(function () {
+                if (window.cordova && window.cordova.plugins.Keyboard) {
+                    cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+                }
+                if (window.StatusBar) {
+                    // org.apache.cordova.statusbar required
+                    StatusBar.styleDefault();
+                }
+
+                //初始化友盟统计
+                window.plugins.umengAnalyticsPlugin.init();
+            });
+        }])
+```
+### 4.参考资料
+[友盟统计分析Windows Phone 8 文档 ](http://dev.umeng.com/analytics/wp-doc/wp8-integration)

@@ -111,7 +111,7 @@ ionic plugin add D:\plugins\cn.zxj.cordova.UmengAnalyticsPlugin
 ### 4.参考资料
 [友盟统计分析Windows Phone 8 文档 ](http://dev.umeng.com/analytics/wp-doc/wp8-integration)
 
-IOS
+IOS(未测试，请基于IOS的同学们反馈一下)
 -------------------------------------
 ### 1.配置AppKey和Channel
 打开插件目录下的ios\UmengAnalyticsPlugin.m文件

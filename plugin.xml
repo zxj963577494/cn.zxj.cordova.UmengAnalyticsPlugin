@@ -55,7 +55,7 @@
                      target-dir="src/cn/zxj/cordova/UmengAnalyticsPlugin/"></source-file>
     </platform>
 
-    <!-- wp8 -->
+    <!-- wp -->
     <platform name="wp8">
         <config-file target="config.xml" parent="/*">
             <feature name="UmengAnalyticsPlugin">

@@ -74,7 +74,7 @@ ionic plugin add D:\plugins\cn.zxj.cordova.UmengAnalyticsPlugin
 Windwos Phone 8
 -------------------------------------
 ### 1.配置AppKey和Channel
-打开插件目录下的wp8\UmengAnalyticsPlugin.cs文件
+打开插件目录下的wp\UmengAnalyticsPlugin.cs文件
 ```c#
 UmengAnalytics.Init("YOUR_APP_KEY");
 ```

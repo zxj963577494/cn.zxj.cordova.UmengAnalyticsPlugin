@@ -13,7 +13,7 @@ namespace WPCordovaClassLib.Cordova.Commands
 {
     public class UmengAnalyticsPlugin : BaseCommand
     {
-        public void init()
+        public void init(string data)
         {
             UmengAnalytics.Init("YOU_APP_KEY");
         }

@@ -52,22 +52,7 @@ ionic plugin add D:\plugins\cn.zxj.cordova.UmengAnalyticsPlugin
 
                 //注意，这段代码是应用退出前保存统计数据，请在退出应用前调用
                 //window.plugins.umengAnalyticsPlugin.onKillProcess();
-
-    			//必需
-                document.addEventListener("pause", onPause, false);
-    			//必需
-                document.addEventListener("resume", onResume, false);
             });
-
-    		//必需
-            function onPause() {
-                window.plugins.umengAnalyticsPlugin.onPause();
-            }
-
-    		//必需
-            function onResume() {
-                window.plugins.umengAnalyticsPlugin.onResume();
-            }
         }])
 ```
 ### 4.参考资料

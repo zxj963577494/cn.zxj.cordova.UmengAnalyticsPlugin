@@ -38,12 +38,6 @@ public class UmengAnalyticsPlugin extends CordovaPlugin {
 			boolean mode = data.getBoolean(0);
 			setDebugMode(mode);
 		}
-		if (action.equals("onResume")) {
-			onResume();
-		}
-		if (action.equals("onPause")) {
-			onPause();
-		}
 		if (action.equals("onKillProcess")) {
 			onKillProcess();
 		}
@@ -61,15 +55,17 @@ public class UmengAnalyticsPlugin extends CordovaPlugin {
 		MobclickAgent.setDebugMode(mode);
 	}
 
-	void onResume() {
-		MobclickAgent.onResume(mContext);
-	}
+    @Override
+    public void onPause(boolean multitasking) {
+        MobclickAgent.onPause(mContext);
+    }
 
-	void onPause() {
-		MobclickAgent.onPause(mContext);
-	}
+    @Override
+    public void onResume(boolean multitasking) {
+        MobclickAgent.onResume(mContext);
+    }
 
-	void onKillProcess(){
+    void onKillProcess(){
     	MobclickAgent.onKillProcess(mContext);
     }
 }

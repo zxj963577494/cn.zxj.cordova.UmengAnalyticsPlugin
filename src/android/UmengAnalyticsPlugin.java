@@ -62,12 +62,10 @@ public class UmengAnalyticsPlugin extends CordovaPlugin {
 	}
 
 	void onResume() {
-		super.onResume();
 		MobclickAgent.onResume(mContext);
 	}
 
 	void onPause() {
-		super.onPause();
 		MobclickAgent.onPause(mContext);
 	}
 

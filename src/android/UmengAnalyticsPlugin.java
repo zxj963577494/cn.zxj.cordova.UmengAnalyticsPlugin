@@ -19,13 +19,16 @@ import com.umeng.analytics.social.UMPlatformData;
 import com.umeng.analytics.social.UMPlatformData.GENDER;
 import com.umeng.analytics.social.UMPlatformData.UMedia;
 
+import com.ionicframework.fangshijie.R;
+
 public class UmengAnalyticsPlugin extends CordovaPlugin {
 	private static Context mContext;
+	private final  String mPageName = "index";
 
 	@Override
 	public void initialize(CordovaInterface cordova, CordovaWebView webView) {
 		super.initialize(cordova, webView);
-		mContext = this.cordova.getActivity();
+		mContext = this.cordova.getActivity().getApplicationContext();
 	}
 
 	@Override
@@ -57,15 +60,17 @@ public class UmengAnalyticsPlugin extends CordovaPlugin {
 
     @Override
     public void onPause(boolean multitasking) {
+        MobclickAgent.onPageEnd(mPageName);
         MobclickAgent.onPause(mContext);
     }
 
     @Override
     public void onResume(boolean multitasking) {
+        MobclickAgent.onPageStart(mPageName);
         MobclickAgent.onResume(mContext);
     }
 
-    void onKillProcess(){
+    void onKillProcess() {
     	MobclickAgent.onKillProcess(mContext);
     }
 }

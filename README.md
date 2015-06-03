@@ -35,7 +35,7 @@ Android
 ionic plugin add D:\plugins\cn.zxj.cordova.UmengAnalyticsPlugin
 ```
 
-### 3.配置代码
+### 4.配置代码
 在app.js文件中添加插件所需的代码
 ```javascript
     .run(['$ionicPlatform', function ($ionicPlatform) {
@@ -58,7 +58,7 @@ ionic plugin add D:\plugins\cn.zxj.cordova.UmengAnalyticsPlugin
             });
         }])
 ```
-### 4.参考资料
+### 5.参考资料
 [友盟统计分析Android文档 ](http://dev.umeng.com/analytics/android-doc/integration)
 Windwos Phone 8
 -------------------------------------

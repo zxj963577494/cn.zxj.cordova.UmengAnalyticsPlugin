@@ -2,8 +2,6 @@
 ===================================
     本插件使用友盟统计，简单实现了友盟统计的基本功能，如启动次数等，暂不包含页面统计等。
 
-本插件目前应该只支持Android，Windows Phone 8，至于IOS尚未测试，先前也没有接触过相关开发，应该不能用，大家可以对照友盟文档试一下，也请基于IOS的同学们反馈一下。
-
 使用说明
 ===================================
 ### 1.切换目录
@@ -99,7 +97,7 @@ ionic plugin add D:\plugins\cn.zxj.cordova.UmengAnalyticsPlugin
 ### 4.参考资料
 [友盟统计分析Windows Phone 8 文档 ](http://dev.umeng.com/analytics/wp-doc/wp8-integration)
 
-IOS(未测试，请基于IOS的同学们反馈一下)
+IOS
 -------------------------------------
 ### 1.配置AppKey和Channel
 打开插件目录下的ios\UmengAnalyticsPlugin.m文件

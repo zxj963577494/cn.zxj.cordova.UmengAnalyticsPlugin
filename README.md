@@ -26,7 +26,10 @@ Android
     YOUR_CHANNEL：填写渠道名称，如360、wodajia、QQ等，可以自定义渠道，在统计后台可以看到渠道信息
     YOUR_APP_KEY：填写从友盟获取的APPKey
 
-### 2.安装插件
+#### 2.更改包名
+打开插件目录\src\android\UmengAnalyticsPlugin.java 文件，找到import your.package.name.R，将其替换为：import 你实际项目包的名称.R。
+
+### 3.安装插件
 使用命令行，切换至ionic所在目录，安装插件
 ```
 ionic plugin add D:\plugins\cn.zxj.cordova.UmengAnalyticsPlugin
